@@ -218,7 +218,7 @@ export default function ContactPage() {
                       Lô 5,6, Khu TDC DC1 Phường Trà Lý, Tỉnh Hưng Yên
                     </div>
                     <a
-                      href="https://maps.app.goo.gl/v6vbammTvXCRm8ot5"
+                      href="https://maps.app.goo.gl/Bfd3LSegzPdqw8Ta7"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#d4af7a] mt-1.5 hover:underline"
@@ -517,7 +517,7 @@ export default function ContactPage() {
             </div>
 
             <a
-              href="https://maps.app.goo.gl/v6vbammTvXCRm8ot5"
+              href="https://maps.app.goo.gl/Bfd3LSegzPdqw8Ta7"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-white/20 shrink-0"

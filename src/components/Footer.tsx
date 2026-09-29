@@ -102,7 +102,7 @@ export default function Footer() {
             <li className="flex items-start gap-2">
               <span className="text-[#d4af7a] mt-0.5">📍</span>
               <a
-                href="https://maps.app.goo.gl/v6vbammTvXCRm8ot5"
+                href="https://maps.app.goo.gl/Bfd3LSegzPdqw8Ta7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition"

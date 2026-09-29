@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 const navItems = [
   { label: 'Trang chủ', href: '/' },
@@ -14,9 +15,30 @@ const navItems = [
 
 export default function Header() {
   const pathname = usePathname()
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+    }
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <header className="sticky top-0 z-50 bg-[#0a0d14]/90 backdrop-blur-md border-b border-white/10 transition-colors duration-300">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-[#0a0d14]/95 backdrop-blur-md border-b border-white/10 shadow-xl py-0'
+          : 'bg-transparent border-b border-transparent py-1'
+      }`}
+    >
       <div className="scroll-progress-bar" />
       <div className="container mx-auto px-4 pt-[max(10px,env(safe-area-inset-top))] pb-2.5 sm:px-6 sm:py-3.5">
         <div className="flex items-center justify-between gap-3">

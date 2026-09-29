@@ -78,7 +78,7 @@ export default function ContactPage() {
     <main className="min-h-screen bg-[#07090e] text-[#f8fafc] font-sans">
       
       {/* SECTION 1: HERO SECTION WITH LUXURY KITCHEN BACKGROUND */}
-      <section className="relative min-h-[500px] lg:min-h-[560px] w-full overflow-hidden flex flex-col justify-between py-14 px-6 sm:px-10 lg:px-16">
+      <section className="relative min-h-[520px] lg:min-h-[580px] w-full overflow-hidden flex flex-col justify-between pt-24 pb-14 px-6 sm:px-10 lg:px-16">
         {/* Background image & gradient overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"

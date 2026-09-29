@@ -154,185 +154,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* SECTION 2: MAIN FORM & CONTACT DETAILS (2 COLUMNS) */}
+      {/* SECTION 2: THÔNG TIN LIÊN HỆ & FORM TƯ VẤN */}
       <section className="container mx-auto px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-12">
           
-          {/* LEFT COLUMN: GỬI YÊU CẦU FORM */}
-          <div className="lg:col-span-7">
-            <div className="rounded-3xl border border-white/15 bg-[#0d111a]/95 p-7 sm:p-9 backdrop-blur-md shadow-2xl">
-              
-              <div className="mb-8">
-                <span className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#d4af7a]">
-                  <span>◎</span> GỬI YÊU CẦU
-                </span>
-                <h2 className="mt-2 text-3xl sm:text-4xl font-extrabold text-white">
-                  Gửi yêu cầu tư vấn & báo giá
-                </h2>
-                <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
-                  Điền thông tin bên dưới, đội ngũ DOMINO sẽ chủ động liên hệ và tư vấn chi tiết trong vòng 24h.
-                </p>
-              </div>
-
-              {submitted ? (
-                <div className="rounded-2xl border border-emerald-500/30 bg-emerald-950/40 p-10 text-center backdrop-blur-sm">
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 text-3xl">
-                    ✓
-                  </div>
-                  <h3 className="mt-5 text-xl font-bold text-white">Gửi yêu cầu thành công!</h3>
-                  <p className="mt-3 text-sm sm:text-base text-slate-200">
-                    Cảm ơn <span className="font-bold text-emerald-400">{formData.name}</span>. Đội ngũ DOMINO sẽ gọi điện tư vấn qua số điện thoại <span className="font-bold text-emerald-400">{formData.phone}</span> trong thời gian sớm nhất.
-                  </p>
-                  <button
-                    onClick={handleReset}
-                    className="mt-8 rounded-xl border border-white/20 bg-white/10 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/20"
-                  >
-                    Gửi yêu cầu mới
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  
-                  {/* Row 1: Họ tên & Số điện thoại */}
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <div>
-                      <label className="block text-sm font-semibold text-slate-200 mb-2">
-                        Họ và tên <span className="text-[#d4af7a]">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="Nhập họ và tên"
-                        className="w-full rounded-xl border border-white/20 bg-[#141924] px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 transition focus:border-[#d4af7a] focus:bg-[#1a2130] focus:outline-none"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-semibold text-slate-200 mb-2">
-                        Số điện thoại <span className="text-[#d4af7a]">*</span>
-                      </label>
-                      <input
-                        type="tel"
-                        required
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="Nhập số điện thoại"
-                        className="w-full rounded-xl border border-white/20 bg-[#141924] px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 transition focus:border-[#d4af7a] focus:bg-[#1a2130] focus:outline-none"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Row 2: Email & Nhu cầu quan tâm */}
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <div>
-                      <label className="block text-sm font-semibold text-slate-200 mb-2">
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="Nhập email (nếu có)"
-                        className="w-full rounded-xl border border-white/20 bg-[#141924] px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 transition focus:border-[#d4af7a] focus:bg-[#1a2130] focus:outline-none"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-semibold text-slate-200 mb-2">
-                        Nhu cầu quan tâm <span className="text-[#d4af7a]">*</span>
-                      </label>
-                      <div className="relative">
-                        <select
-                          required
-                          value={formData.service}
-                          onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                          className="w-full appearance-none rounded-xl border border-white/20 bg-[#141924] px-4 py-3.5 text-sm sm:text-base text-white transition focus:border-[#d4af7a] focus:bg-[#1a2130] focus:outline-none pr-10"
-                        >
-                          <option value="" disabled>Chọn nhu cầu</option>
-                          <option value="Tư vấn thiết kế tủ bếp kính">Tư vấn thiết kế tủ bếp kính</option>
-                          <option value="Tham quan showroom">Tham quan showroom</option>
-                          <option value="Báo giá & Thi công mặt bằng">Báo giá & Thi công mặt bằng</option>
-                          <option value="Hỗ trợ bảo hành">Hỗ trợ bảo hành</option>
-                        </select>
-                        <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-slate-400 text-sm font-bold">
-                          ⌄
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Row 3: Nội dung chi tiết */}
-                  <div>
-                    <label className="block text-sm font-semibold text-slate-200 mb-2">
-                      Nội dung chi tiết
-                    </label>
-                    <textarea
-                      rows={4}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Chia sẻ thêm về không gian, nhu cầu, ngân sách..."
-                      className="w-full rounded-xl border border-white/20 bg-[#141924] px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 transition focus:border-[#d4af7a] focus:bg-[#1a2130] focus:outline-none"
-                    />
-                  </div>
-
-                  {/* Row 4: File attachment box */}
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 rounded-2xl border border-white/15 bg-[#141924] p-4 sm:p-5">
-                    <div className="flex items-center gap-3.5">
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-slate-200 text-xl">
-                        🔒
-                      </div>
-                      <div>
-                        <div className="text-sm font-semibold text-white">
-                          Tải ảnh mặt bằng / không gian bếp <span className="text-slate-400 font-normal">(nếu có)</span>
-                        </div>
-                        <div className="text-xs text-slate-300 mt-0.5">
-                          Hỗ trợ định dạng JPG, PNG, PDF (tối đa 10MB)
-                        </div>
-                        {formData.fileName && (
-                          <div className="text-xs text-[#d4af7a] mt-1 font-semibold">
-                            📎 Đã chọn: {formData.fileName}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    <label className="inline-flex cursor-pointer items-center justify-center rounded-xl border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-white/20 shrink-0">
-                      <span>Chọn file</span>
-                      <input type="file" accept=".jpg,.png,.pdf" onChange={handleFileChange} className="hidden" />
-                    </label>
-                  </div>
-
-                  {/* Submit button */}
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-[#d4af7a] hover:bg-[#c59e69] px-6 py-4.5 text-base sm:text-lg font-extrabold text-[#0f172a] shadow-xl shadow-[#d4af7a]/20 transition active:scale-[0.99] disabled:opacity-50 mt-3"
-                  >
-                    {loading ? (
-                      <span>Đang gửi...</span>
-                    ) : (
-                      <>
-                        <span>Gửi yêu cầu cho DOMINO</span>
-                        <span className="text-xl">→</span>
-                      </>
-                    )}
-                  </button>
-
-                  {/* Security Note */}
-                  <p className="text-center text-xs sm:text-sm text-slate-300 flex items-center justify-center gap-2 pt-2">
-                    <span>🔒</span>
-                    <span>Thông tin của bạn được cam kết bảo mật tuyệt đối theo chính sách của DOMINO.</span>
-                  </p>
-
-                </form>
-              )}
-
-            </div>
-          </div>
-
-          {/* RIGHT COLUMN: THÔNG TIN LIÊN HỆ & KẾT NỐI VỚI DOMINO */}
+          {/* COLUMN 1 (CỘT TRÁI / TRÊN): THÔNG TIN LIÊN HỆ & KẾT NỐI VỚI DOMINO */}
           <div className="space-y-8 lg:col-span-5">
             
             {/* Card 1: THÔNG TIN LIÊN HỆ */}
@@ -503,92 +329,218 @@ export default function ContactPage() {
 
           </div>
 
+          {/* COLUMN 2 (CỘT PHẢI / DƯỚI): GỬI YÊU CẦU FORM */}
+          <div className="lg:col-span-7">
+            <div className="rounded-3xl border border-white/15 bg-[#0d111a]/95 p-7 sm:p-9 backdrop-blur-md shadow-2xl">
+              
+              <div className="mb-8 border-b border-white/15 pb-5">
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+                  Gửi yêu cầu tư vấn & báo giá
+                </h2>
+                <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
+                  Điền thông tin bên dưới, đội ngũ DOMINO sẽ chủ động liên hệ và tư vấn chi tiết trong vòng 24h.
+                </p>
+              </div>
+
+              {submitted ? (
+                <div className="rounded-2xl border border-emerald-500/30 bg-emerald-950/40 p-10 text-center backdrop-blur-sm">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 text-3xl">
+                    ✓
+                  </div>
+                  <h3 className="mt-5 text-xl font-bold text-white">Gửi yêu cầu thành công!</h3>
+                  <p className="mt-3 text-sm sm:text-base text-slate-200">
+                    Cảm ơn <span className="font-bold text-emerald-400">{formData.name}</span>. Đội ngũ DOMINO sẽ gọi điện tư vấn qua số điện thoại <span className="font-bold text-emerald-400">{formData.phone}</span> trong thời gian sớm nhất.
+                  </p>
+                  <button
+                    onClick={handleReset}
+                    className="mt-8 rounded-xl border border-white/20 bg-white/10 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/20"
+                  >
+                    Gửi yêu cầu mới
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  
+                  {/* Row 1: Họ tên & Số điện thoại */}
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <div>
+                      <label className="block text-sm font-semibold text-slate-200 mb-2">
+                        Họ và tên <span className="text-[#d4af7a]">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        placeholder="Nhập họ và tên"
+                        className="w-full rounded-xl border border-white/20 bg-[#141924] px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 transition focus:border-[#d4af7a] focus:bg-[#1a2130] focus:outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-slate-200 mb-2">
+                        Số điện thoại <span className="text-[#d4af7a]">*</span>
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="Nhập số điện thoại"
+                        className="w-full rounded-xl border border-white/20 bg-[#141924] px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 transition focus:border-[#d4af7a] focus:bg-[#1a2130] focus:outline-none"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Row 2: Email & Nhu cầu quan tâm */}
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <div>
+                      <label className="block text-sm font-semibold text-slate-200 mb-2">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="Nhập email (nếu có)"
+                        className="w-full rounded-xl border border-white/20 bg-[#141924] px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 transition focus:border-[#d4af7a] focus:bg-[#1a2130] focus:outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-slate-200 mb-2">
+                        Nhu cầu quan tâm <span className="text-[#d4af7a]">*</span>
+                      </label>
+                      <div className="relative">
+                        <select
+                          required
+                          value={formData.service}
+                          onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                          className="w-full appearance-none rounded-xl border border-white/20 bg-[#141924] px-4 py-3.5 text-sm sm:text-base text-white transition focus:border-[#d4af7a] focus:bg-[#1a2130] focus:outline-none pr-10"
+                        >
+                          <option value="" disabled>Chọn nhu cầu</option>
+                          <option value="Tư vấn thiết kế tủ bếp kính">Tư vấn thiết kế tủ bếp kính</option>
+                          <option value="Tham quan showroom">Tham quan showroom</option>
+                          <option value="Báo giá & Thi công mặt bằng">Báo giá & Thi công mặt bằng</option>
+                          <option value="Hỗ trợ bảo hành">Hỗ trợ bảo hành</option>
+                        </select>
+                        <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-slate-400 text-sm font-bold">
+                          ⌄
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Row 3: Nội dung chi tiết */}
+                  <div>
+                    <label className="block text-sm font-semibold text-slate-200 mb-2">
+                      Nội dung chi tiết
+                    </label>
+                    <textarea
+                      rows={4}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder="Chia sẻ thêm về không gian, nhu cầu, ngân sách..."
+                      className="w-full rounded-xl border border-white/20 bg-[#141924] px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 transition focus:border-[#d4af7a] focus:bg-[#1a2130] focus:outline-none"
+                    />
+                  </div>
+
+                  {/* Row 4: File attachment box */}
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 rounded-2xl border border-white/15 bg-[#141924] p-4 sm:p-5">
+                    <div className="flex items-center gap-3.5">
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-slate-200 text-xl">
+                        🔒
+                      </div>
+                      <div>
+                        <div className="text-sm font-semibold text-white">
+                          Tải ảnh mặt bằng / không gian bếp <span className="text-slate-400 font-normal">(nếu có)</span>
+                        </div>
+                        <div className="text-xs text-slate-300 mt-0.5">
+                          Hỗ trợ định dạng JPG, PNG, PDF (tối đa 10MB)
+                        </div>
+                        {formData.fileName && (
+                          <div className="text-xs text-[#d4af7a] mt-1 font-semibold">
+                            📎 Đã chọn: {formData.fileName}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    <label className="inline-flex cursor-pointer items-center justify-center rounded-xl border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-white/20 shrink-0">
+                      <span>Chọn file</span>
+                      <input type="file" accept=".jpg,.png,.pdf" onChange={handleFileChange} className="hidden" />
+                    </label>
+                  </div>
+
+                  {/* Submit button */}
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-[#d4af7a] hover:bg-[#c59e69] px-6 py-4.5 text-base sm:text-lg font-extrabold text-[#0f172a] shadow-xl shadow-[#d4af7a]/20 transition active:scale-[0.99] disabled:opacity-50 mt-3"
+                  >
+                    {loading ? (
+                      <span>Đang gửi...</span>
+                    ) : (
+                      <>
+                        <span>Gửi yêu cầu cho DOMINO</span>
+                        <span className="text-xl">→</span>
+                      </>
+                    )}
+                  </button>
+
+                  {/* Security Note */}
+                  <p className="text-center text-xs sm:text-sm text-slate-300 flex items-center justify-center gap-2 pt-2">
+                    <span>🔒</span>
+                    <span>Thông tin của bạn được cam kết bảo mật tuyệt đối theo chính sách của DOMINO.</span>
+                  </p>
+
+                </form>
+              )}
+
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* SECTION 3: SHOWROOM TRẢI NGHIỆM THỰC TẾ & BẢN ĐỒ CHỈ ĐƯỜNG */}
-      <section className="container mx-auto px-4 py-10 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-12 items-stretch">
-          
-          {/* Left Column: Showroom DOMINO */}
-          <div className="lg:col-span-6 flex flex-col justify-between rounded-3xl border border-white/15 bg-[#0d111a]/95 p-7 sm:p-9 backdrop-blur-md">
+      {/* SECTION 3: BẢN ĐỒ CHỈ ĐƯỜNG FULL WIDTH */}
+      <section className="container mx-auto px-4 py-6 sm:px-6 lg:px-8">
+        <div className="overflow-hidden rounded-3xl border border-white/15 bg-[#0d111a]/95 backdrop-blur-md shadow-2xl">
+          <div className="flex items-center justify-between gap-4 border-b border-white/15 p-6 sm:px-8">
             <div>
-              <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#d4af7a]">
-                TRẢI NGHIỆM THỰC TẾ
-              </span>
-              <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold text-white">
-                Showroom DOMINO tại Hưng Yên
-              </h3>
-              <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
-                Trực tiếp trải nghiệm chất liệu, màu sắc và các giải pháp tủ bếp cùng đội ngũ tư vấn của chúng tôi.
-              </p>
+              <div className="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#d4af7a]">
+                <span>📍</span> BẢN ĐỒ CHỈ ĐƯỜNG
+              </div>
+              <div className="text-base sm:text-lg text-slate-200 mt-1 truncate max-w-xs sm:max-w-xl font-bold">
+                Lô 5,6, Khu TDC DC1 Phường Trà Lý, Tỉnh Hưng Yên
+              </div>
             </div>
 
-            {/* 3 Gallery Images */}
-            <div className="mt-8 grid grid-cols-3 gap-4">
-              <div className="group overflow-hidden rounded-2xl border border-white/15 aspect-[4/3]">
-                <img
-                  src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=600&q=80"
-                  alt="Showroom DOMINO 1"
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
-                />
-              </div>
-              <div className="group overflow-hidden rounded-2xl border border-white/15 aspect-[4/3]">
-                <img
-                  src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80"
-                  alt="Showroom DOMINO 2"
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
-                />
-              </div>
-              <div className="group overflow-hidden rounded-2xl border border-white/15 aspect-[4/3]">
-                <img
-                  src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=600&q=80"
-                  alt="Showroom DOMINO 3"
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
-                />
-              </div>
-            </div>
+            <a
+              href="https://maps.app.goo.gl/v6vbammTvXCRm8ot5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-white/20 shrink-0"
+            >
+              <span>Chỉ đường</span>
+              <span>→</span>
+            </a>
           </div>
 
-          {/* Right Column: Bản đồ chỉ đường */}
-          <div className="lg:col-span-6 flex flex-col justify-between overflow-hidden rounded-3xl border border-white/15 bg-[#0d111a]/95 backdrop-blur-md">
-            <div className="flex items-center justify-between gap-4 border-b border-white/15 p-6 sm:px-8">
-              <div>
-                <div className="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#d4af7a]">
-                  <span>📍</span> BẢN ĐỒ CHỈ ĐƯỜNG
-                </div>
-                <div className="text-sm text-slate-200 mt-1 truncate max-w-xs sm:max-w-md font-semibold">
-                  Lô 5,6, Khu TDC DC1 Phường Trà Lý, Tỉnh Hưng Yên
-                </div>
-              </div>
-
-              <a
-                href="https://maps.app.goo.gl/v6vbammTvXCRm8ot5"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-xs sm:text-sm font-bold text-white transition hover:bg-white/20 shrink-0"
-              >
-                <span>Chỉ đường</span>
-                <span>→</span>
-              </a>
-            </div>
-
-            {/* Google map iframe */}
-            <div className="relative min-h-[260px] h-full w-full bg-slate-900">
-              <iframe
-                title="Tủ Bếp DOMINO Thái Bình - Google Maps"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d660.8180273165003!2d106.35469501895435!3d20.45897941534718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135fb0026d4329b%3A0xce850c3b80506fa8!2zVOG7pyBC4bq_cCBET01JTk8gVGjDoWkgQsOsbmg!5e0!3m2!1svi!2s!4v1790666135664!5m2!1svi!2s"
-                width="100%"
-                height="100%"
-                style={{ border: 0, minHeight: '260px' }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="strict-origin-when-cross-origin"
-                className="h-full w-full grayscale-[20%] contrast-[105%] invert-[85%] hue-rotate-[180deg]"
-              />
-            </div>
+          {/* Google map iframe */}
+          <div className="relative h-[380px] sm:h-[440px] w-full bg-slate-900">
+            <iframe
+              title="Tủ Bếp DOMINO Thái Bình - Google Maps"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d660.8180273165003!2d106.35469501895435!3d20.45897941534718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135fb0026d4329b%3A0xce850c3b80506fa8!2zVOG7pyBC4bq_cCBET01JTk8gVGjDoWkgQsOsbmg!5e0!3m2!1svi!2s!4v1790666135664!5m2!1svi!2s"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              className="h-full w-full grayscale-[20%] contrast-[105%] invert-[85%] hue-rotate-[180deg]"
+            />
           </div>
-
         </div>
       </section>
 

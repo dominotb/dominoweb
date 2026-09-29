@@ -436,7 +436,7 @@ export default function ContactPage() {
                 
                 {/* Youtube */}
                 <a
-                  href="https://www.youtube.com"
+                  href="https://www.youtube.com/@dominothaibinh"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3.5 rounded-2xl border border-white/15 bg-[#141924] p-3.5 sm:p-4 transition hover:border-red-500/50 hover:bg-white/10"

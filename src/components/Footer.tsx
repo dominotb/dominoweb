@@ -43,7 +43,7 @@ export default function Footer() {
               f
             </a>
             <a
-              href="https://www.youtube.com"
+              href="https://www.youtube.com/@dominothaibinh"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Youtube"

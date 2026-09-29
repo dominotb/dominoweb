@@ -22,10 +22,13 @@ export default function Footer() {
         
         {/* Column 1: Brand info & Socials */}
         <div className="lg:col-span-3">
-          <div>
-            <span className="font-logo text-[2.2rem] font-bold tracking-tight text-white">DOMINO</span>
-            <div className="text-[0.65rem] uppercase tracking-[0.45em] text-[#d4af7a] -mt-1 font-medium">glass kitchen</div>
-          </div>
+          <Link href="/" className="inline-block" aria-label="DOMINO home">
+            <img
+              src="/logo.png"
+              alt="DOMINO Glass Kitchen"
+              className="h-12 sm:h-14 w-auto object-contain transition-opacity hover:opacity-90"
+            />
+          </Link>
           <p className="mt-4 text-xs leading-relaxed text-[#94a3b8]">
             Thiết kế, sản xuất và lắp đặt tủ bếp hiện đại với phong cách tối giản, bền vững và đậm dấu ấn riêng.
           </p>

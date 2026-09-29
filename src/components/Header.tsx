@@ -21,14 +21,11 @@ export default function Header() {
       <div className="container mx-auto px-4 pt-[max(10px,env(safe-area-inset-top))] pb-2.5 sm:px-6 sm:py-3.5">
         <div className="flex items-center justify-between gap-3">
           <Link href="/" className="flex items-center gap-3" aria-label="DOMINO home">
-            <div>
-              <div className="font-logo text-[1.9rem] sm:text-[2.2rem] font-bold leading-none tracking-tight text-[#F8FAFC]">
-                DOMINO
-              </div>
-              <div className="text-[0.55rem] sm:text-[0.62rem] uppercase tracking-[0.45em] text-[#d4af7a] font-medium -mt-0.5">
-                glass kitchen
-              </div>
-            </div>
+            <img
+              src="/logo.png"
+              alt="DOMINO Glass Kitchen"
+              className="h-10 sm:h-12 w-auto object-contain transition-opacity hover:opacity-90"
+            />
           </Link>
 
           <nav className="hidden items-center gap-6 lg:gap-8 md:flex">

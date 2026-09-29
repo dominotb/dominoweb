@@ -23,7 +23,7 @@ export default function Footer() {
         {/* Column 1: Brand info & Socials */}
         <div className="lg:col-span-3">
           <div>
-            <span className="font-serif text-[2.2rem] font-bold tracking-tight text-white">DOMINO</span>
+            <span className="font-logo text-[2.2rem] font-bold tracking-tight text-white">DOMINO</span>
             <div className="text-[0.65rem] uppercase tracking-[0.45em] text-[#d4af7a] -mt-1 font-medium">glass kitchen</div>
           </div>
           <p className="mt-4 text-xs leading-relaxed text-[#94a3b8]">

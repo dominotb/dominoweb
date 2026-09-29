@@ -35,6 +35,10 @@
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
+.font-logo {
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+}
+
 html,body,#root{min-height:100%; margin:0;}
 html { scroll-behavior: auto; }
 body{

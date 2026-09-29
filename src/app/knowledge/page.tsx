@@ -1,0 +1,6 @@
+import PageIntro from '@/components/PageIntro'
+import { articles } from '@/data/site'
+
+export default function KnowledgePage() {
+  return <main className="min-h-screen bg-[#f7f5f2] text-[#111827]"><PageIntro eyebrow="Góc bếp DOMINO" title="Thông tin hữu ích trước khi bạn quyết định." description="Từ vật liệu, công năng đến bảo dưỡng, chúng tôi chia sẻ những điều thực tế để bạn có một căn bếp dùng tốt mỗi ngày." /><section className="container mx-auto px-6 py-16 md:py-24"><div className="grid gap-5 md:grid-cols-2">{articles.map((article, index) => <article key={article.title} className="group rounded-[24px] border border-[#e5e7eb] bg-white p-7 shadow-[0_18px_45px_rgba(15,23,42,0.04)] transition hover:-translate-y-1"><div className="flex items-center justify-between text-xs uppercase tracking-[0.16em] text-[#64748b]"><span>{article.category}</span><span>0{index + 1}</span></div><h2 className="mt-16 max-w-lg text-2xl font-semibold tracking-[-0.04em] group-hover:text-[#2563EB]">{article.title}</h2><div className="mt-8 flex items-center justify-between border-t border-[#eef0f2] pt-4 text-sm text-[#64748b]"><span>{article.date}</span><span>{article.readTime} <span aria-hidden="true">→</span></span></div></article>)}</div></section></main>
+}

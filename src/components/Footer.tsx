@@ -101,7 +101,14 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-[#d4af7a] mt-0.5">📍</span>
-              <span>Lô 5,6, Khu TDC DC1 Phường Trà Lý, Tỉnh Hưng Yên</span>
+              <a
+                href="https://maps.app.goo.gl/v6vbammTvXCRm8ot5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition"
+              >
+                Lô 5,6, Khu TDC DC1 Phường Trà Lý, Tỉnh Hưng Yên
+              </a>
             </li>
             <li className="flex items-center gap-2">
               <span className="text-[#d4af7a]">🕒</span>

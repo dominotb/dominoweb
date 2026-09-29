@@ -392,7 +392,7 @@ export default function ContactPage() {
                       Lô 5,6, Khu TDC DC1 Phường Trà Lý, Tỉnh Hưng Yên
                     </div>
                     <a
-                      href="https://www.google.com/maps/place/T%E1%BB%A7+B%E1%BA%BFp+DOMINO+Th%C3%A1i+B%C3%ACnh/@20.4589794,106.354695,19z"
+                      href="https://maps.app.goo.gl/v6vbammTvXCRm8ot5"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#d4af7a] mt-1.5 hover:underline"
@@ -563,7 +563,7 @@ export default function ContactPage() {
               </div>
 
               <a
-                href="https://www.google.com/maps/place/T%E1%BB%A7+B%E1%BA%BFp+DOMINO+Th%C3%A1i+B%C3%ACnh/@20.4589794,106.354695,19z"
+                href="https://maps.app.goo.gl/v6vbammTvXCRm8ot5"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-xl border border-white/20 bg-white/10 px-4 py-2.5 text-xs sm:text-sm font-bold text-white transition hover:bg-white/20 shrink-0"

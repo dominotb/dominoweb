@@ -38,36 +38,36 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs text-white transition hover:border-[#d4af7a] hover:bg-[#d4af7a] hover:text-[#0f172a]"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 p-1.5 transition hover:border-[#d4af7a] hover:bg-[#d4af7a]/20"
             >
-              f
+              <img src="/icon/facebook.webp" alt="Facebook" className="h-full w-full object-contain rounded-full" />
             </a>
             <a
               href="https://www.youtube.com/@dominothaibinh"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Youtube"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs text-white transition hover:border-[#d4af7a] hover:bg-[#d4af7a] hover:text-[#0f172a]"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 p-1.5 transition hover:border-[#d4af7a] hover:bg-[#d4af7a]/20"
             >
-              ▶
+              <img src="/icon/youtube.png" alt="Youtube" className="h-full w-full object-contain" />
             </a>
             <a
               href="https://www.tiktok.com/@tubep.domino.tb"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-xs text-white transition hover:border-[#d4af7a] hover:bg-[#d4af7a] hover:text-[#0f172a]"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 p-1.5 transition hover:border-[#d4af7a] hover:bg-[#d4af7a]/20"
             >
-              ♪
+              <img src="/icon/tiktok.webp" alt="TikTok" className="h-full w-full object-contain rounded-full" />
             </a>
             <a
               href="https://zalo.me/0975811678"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Zalo"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[10px] font-bold text-white transition hover:border-[#d4af7a] hover:bg-[#d4af7a] hover:text-[#0f172a]"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 p-1.5 transition hover:border-[#d4af7a] hover:bg-[#d4af7a]/20"
             >
-              Zalo
+              <img src="/icon/zalo.webp" alt="Zalo" className="h-full w-full object-contain rounded-full" />
             </a>
           </div>
         </div>

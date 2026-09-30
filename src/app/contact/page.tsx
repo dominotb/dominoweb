@@ -76,9 +76,8 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-[#07090e] text-[#f8fafc] font-sans">
-      
-      {/* SECTION 1: HERO SECTION WITH LUXURY KITCHEN BACKGROUND */}
-      <section className="relative min-h-[520px] lg:min-h-[580px] w-full overflow-hidden flex flex-col justify-between pt-24 pb-14 px-6 sm:px-10 lg:px-16">
+      {/* SECTION 1: HERO & THÔNG TIN LIÊN HỆ / FORM TƯ VẤN */}
+      <section className="relative w-full overflow-hidden pt-28 pb-16 px-4 sm:px-6 lg:px-8">
         {/* Background image & gradient overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
@@ -89,74 +88,20 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#07090e]/95 via-[#07090e]/85 to-[#07090e]/90 z-0" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#07090e]/60 via-transparent to-[#07090e] z-0" />
 
-        <div className="container mx-auto relative z-10 my-auto pt-6">
-          <div className="max-w-4xl">
+        <div className="container mx-auto relative z-10 pt-4">
+          <div className="max-w-4xl mb-10">
             <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#d4af7a]">
               LIÊN HỆ
             </span>
             <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white">
               Chúng tôi luôn sẵn sàng đồng hành cùng bạn
             </h1>
-            <p className="mt-5 text-base sm:text-lg lg:text-xl leading-relaxed text-slate-200 font-normal max-w-3xl">
+            <p className="mt-4 text-base sm:text-lg lg:text-xl leading-relaxed text-slate-200 font-normal max-w-3xl">
               Dù là tư vấn thiết kế, báo giá, tham quan showroom hay bảo hành, đội ngũ DOMINO luôn sẵn sàng hỗ trợ nhanh chóng và tận tâm.
             </p>
-
-            {/* 4 Feature Pills / Cards */}
-            <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl">
-              <div className="flex items-center gap-3.5 rounded-2xl border border-white/15 bg-white/5 p-4 backdrop-blur-md">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d4af7a]/20 text-[#d4af7a] text-base">
-                  👤
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-white">Tư vấn chi tiết</div>
-                  <div className="text-xs text-slate-300">Giải đáp mọi thắc mắc</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3.5 rounded-2xl border border-white/15 bg-white/5 p-4 backdrop-blur-md">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d4af7a]/20 text-[#d4af7a] text-base">
-                  🏷️
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-white">Báo giá minh bạch</div>
-                  <div className="text-xs text-slate-300">Phù hợp nhu cầu</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3.5 rounded-2xl border border-white/15 bg-white/5 p-4 backdrop-blur-md">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d4af7a]/20 text-[#d4af7a] text-base">
-                  📅
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-white">Hẹn showroom</div>
-                  <div className="text-xs text-slate-300">Trải nghiệm thực tế</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3.5 rounded-2xl border border-white/15 bg-white/5 p-4 backdrop-blur-md">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#d4af7a]/20 text-[#d4af7a] text-base">
-                  🛠️
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-white">Hỗ trợ sau bán</div>
-                  <div className="text-xs text-slate-300">Dài hạn, tận tâm</div>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
 
-        {/* Tagline bottom right */}
-        <div className="container mx-auto relative z-10 pt-8 text-right hidden sm:block">
-          <span className="text-sm sm:text-base italic text-slate-300 font-medium">
-            Không chỉ là một bộ tủ bếp, mà là một không gian sống bền vững 10–20 năm ―
-          </span>
-        </div>
-      </section>
-
-      {/* SECTION 2: THÔNG TIN LIÊN HỆ & FORM TƯ VẤN */}
-      <section className="container mx-auto px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-12">
+          <div className="grid gap-10 lg:grid-cols-12">
           
           {/* COLUMN 1 (CỘT TRÁI / TRÊN): THÔNG TIN LIÊN HỆ & KẾT NỐI VỚI DOMINO */}
           <div className="space-y-8 lg:col-span-5">
@@ -258,22 +203,18 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="mt-5 grid grid-cols-2 gap-4">
+              <div className="mt-5 grid grid-cols-4 gap-3 sm:gap-4">
                 
                 {/* Youtube */}
                 <a
                   href="https://www.youtube.com/@dominothaibinh"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3.5 rounded-2xl border border-white/15 bg-[#141924] p-3.5 sm:p-4 transition hover:border-red-500/50 hover:bg-white/10"
+                  aria-label="Kênh Youtube DOMINO"
+                  title="Kênh Youtube DOMINO"
+                  className="flex h-14 w-full items-center justify-center rounded-2xl border border-white/15 bg-[#141924] p-3 transition hover:border-red-500/60 hover:bg-red-500/10 hover:scale-105"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-600 text-white text-sm font-bold">
-                    ▶
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-sm font-bold text-white truncate">Kênh Youtube</div>
-                    <div className="text-xs text-slate-300 truncate">Video công trình</div>
-                  </div>
+                  <img src="/icon/youtube.png" alt="Youtube" className="h-7 w-7 object-contain" />
                 </a>
 
                 {/* Facebook / Fanpage */}
@@ -281,15 +222,11 @@ export default function ContactPage() {
                   href="https://www.facebook.com/tubepdominothaibinh"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3.5 rounded-2xl border border-white/15 bg-[#141924] p-3.5 sm:p-4 transition hover:border-blue-500/50 hover:bg-white/10"
+                  aria-label="Fanpage Facebook DOMINO"
+                  title="Fanpage Facebook DOMINO"
+                  className="flex h-14 w-full items-center justify-center rounded-2xl border border-white/15 bg-[#141924] p-3 transition hover:border-blue-500/60 hover:bg-blue-500/10 hover:scale-105"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-600 text-white text-sm font-bold">
-                    f
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-sm font-bold text-white truncate">Fanpage</div>
-                    <div className="text-xs text-slate-300 truncate">Tủ Bếp DOMINO</div>
-                  </div>
+                  <img src="/icon/facebook.webp" alt="Facebook" className="h-7 w-7 object-contain rounded-full" />
                 </a>
 
                 {/* Zalo OA */}
@@ -297,15 +234,11 @@ export default function ContactPage() {
                   href="https://zalo.me/0975811678"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3.5 rounded-2xl border border-white/15 bg-[#141924] p-3.5 sm:p-4 transition hover:border-sky-500/50 hover:bg-white/10"
+                  aria-label="Zalo OA DOMINO"
+                  title="Zalo OA DOMINO"
+                  className="flex h-14 w-full items-center justify-center rounded-2xl border border-white/15 bg-[#141924] p-3 transition hover:border-sky-500/60 hover:bg-sky-500/10 hover:scale-105"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-500 text-white text-xs font-black">
-                    Zalo
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-sm font-bold text-white truncate">Zalo OA</div>
-                    <div className="text-xs text-slate-300 truncate">Hỗ trợ nhanh</div>
-                  </div>
+                  <img src="/icon/zalo.webp" alt="Zalo" className="h-7 w-7 object-contain rounded-full" />
                 </a>
 
                 {/* TikTok */}
@@ -313,15 +246,11 @@ export default function ContactPage() {
                   href="https://www.tiktok.com/@tubep.domino.tb"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3.5 rounded-2xl border border-white/15 bg-[#141924] p-3.5 sm:p-4 transition hover:border-pink-500/50 hover:bg-white/10"
+                  aria-label="TikTok DOMINO"
+                  title="TikTok DOMINO"
+                  className="flex h-14 w-full items-center justify-center rounded-2xl border border-white/15 bg-[#141924] p-3 transition hover:border-pink-500/60 hover:bg-pink-500/10 hover:scale-105"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-black text-white text-sm font-bold border border-white/20">
-                    ♪
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-sm font-bold text-white font-mono truncate">@tubep.domino</div>
-                    <div className="text-xs text-slate-300 truncate">TikTok DOMINO</div>
-                  </div>
+                  <img src="/icon/tiktok.webp" alt="TikTok" className="h-7 w-7 object-contain rounded-full" />
                 </a>
 
               </div>
@@ -501,17 +430,18 @@ export default function ContactPage() {
           </div>
 
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* SECTION 3: BẢN ĐỒ CHỈ ĐƯỜNG FULL WIDTH */}
       <section className="container mx-auto px-4 py-6 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-3xl border border-white/15 bg-[#0d111a]/95 backdrop-blur-md shadow-2xl">
-          <div className="flex items-center justify-between gap-4 border-b border-white/15 p-6 sm:px-8">
-            <div>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3.5 sm:gap-4 border-b border-white/15 p-5 sm:p-6 sm:px-8">
+            <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#d4af7a]">
                 <span>📍</span> BẢN ĐỒ CHỈ ĐƯỜNG
               </div>
-              <div className="text-base sm:text-lg text-slate-200 mt-1 truncate max-w-xs sm:max-w-xl font-bold">
+              <div className="text-sm sm:text-lg text-slate-200 mt-1 font-bold truncate">
                 Lô 5,6, Khu TDC DC1 Phường Trà Lý, Tỉnh Hưng Yên
               </div>
             </div>
@@ -520,7 +450,7 @@ export default function ContactPage() {
               href="https://maps.app.goo.gl/Bfd3LSegzPdqw8Ta7"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-white/20 shrink-0"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 sm:px-5 py-2.5 text-xs sm:text-sm font-bold text-white transition hover:bg-white/20 shrink-0 w-full sm:w-auto"
             >
               <span>Chỉ đường</span>
               <span>→</span>

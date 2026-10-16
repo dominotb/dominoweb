@@ -1,16 +1,13 @@
 import { createClient } from '@supabase/supabase-js'
 
-export const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
-export const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ''
+export const supabaseUrl =
+  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://fzayamxtakmxjskxyugg.supabase.co'
+export const supabaseAnonKey =
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ6YXlhbXh0YWtteGpza3h5dWdnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA5MTkxNDIsImV4cCI6MjEwNjQ5NTE0Mn0.ZQIS2j23cOhYzCklL1yQxO4KldzEUyUMIllyWimMIG8'
 
-// Only create the Supabase client when required env vars are present.
-export let supabase: any = null
-if (supabaseUrl && supabaseAnonKey) {
-  supabase = createClient(supabaseUrl, supabaseAnonKey)
-} else {
-  // eslint-disable-next-line no-console
-  console.warn('Supabase env vars are not set: NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY')
-}
+// Always initialize supabase client with the valid endpoint
+export const supabase: any = createClient(supabaseUrl, supabaseAnonKey)
 
 export interface Lead {
   id: string

@@ -19,6 +19,8 @@ const secondaryLinks = [
   { label: 'Giới thiệu', href: '/#about' },
   { label: 'Bảo hành', href: '/warranty' },
   { label: 'Góc chia sẻ', href: '/knowledge' },
+  { label: 'Bảo mật', href: '/chinh-sach-bao-mat' },
+  { label: 'Điều khoản', href: '/dieu-khoan-su-dung' },
 ]
 
 export default function MobileBottomNav() {
@@ -35,6 +37,10 @@ export default function MobileBottomNav() {
     window.addEventListener('keydown', closeOnEscape)
     return () => window.removeEventListener('keydown', closeOnEscape)
   }, [])
+
+  if (pathname?.startsWith('/admin')) {
+    return null
+  }
 
   const isActive = (href: string) => href === '/' ? pathname === '/' : pathname.startsWith(href)
 

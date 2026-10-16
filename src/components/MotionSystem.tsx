@@ -13,6 +13,10 @@ function setProgress(element: HTMLElement, property: string, progress: number) {
 
 export default function MotionSystem() {
   useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.pathname.startsWith('/admin')) {
+      return
+    }
+
     const root = document.documentElement
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
 

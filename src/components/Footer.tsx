@@ -1,11 +1,17 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 
 export default function Footer() {
+  const pathname = usePathname()
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
+
+  if (pathname?.startsWith('/admin')) {
+    return null
+  }
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault()
@@ -17,7 +23,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="border-t border-white/10 bg-[#07090e] text-[#94a3b8]">
+    <footer className="border-t border-white/10 bg-black text-[#94a3b8]">
       <div className="container mx-auto grid gap-10 px-6 py-14 lg:grid-cols-12 lg:gap-8">
         
         {/* Column 1: Brand info & Socials */}
@@ -156,9 +162,9 @@ export default function Footer() {
         <div className="container mx-auto flex flex-col items-center justify-between gap-3 px-6 py-4 text-[11px] text-slate-500 sm:flex-row">
           <span>© 2026 DOMINO. All rights reserved.</span>
           <div className="flex flex-wrap items-center gap-4 text-slate-400">
-            <Link href="#" className="hover:text-white transition">Chính sách bảo mật</Link>
+            <Link href="/chinh-sach-bao-mat" className="hover:text-white transition">Chính sách bảo mật</Link>
             <span>|</span>
-            <Link href="#" className="hover:text-white transition">Điều khoản sử dụng</Link>
+            <Link href="/dieu-khoan-su-dung" className="hover:text-white transition">Điều khoản sử dụng</Link>
             <span>|</span>
             <span>Thiết kế & Thi công tủ bếp kính cao cấp.</span>
           </div>

@@ -129,11 +129,10 @@ export default function ProductRange({ products }: { products?: Product[] }) {
                     setActive(index)
                     setUserInteracted(true)
                   }}
-                  className={`touch-card-active group w-full rounded-xl border p-4 text-left transition-all duration-300 ${
-                    active === index
+                  className={`touch-card-active group w-full rounded-xl border p-4 text-left transition-all duration-300 ${active === index
                       ? 'border-[#171717] bg-[#171717] text-white shadow-lg'
                       : 'border-[#c9c1b4] bg-white/40 text-[#78716c] hover:border-[#171717] hover:text-[#171717]'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center justify-between">
                     <span className={`text-xs font-semibold tracking-widest ${active === index ? 'text-white/60' : 'text-[#171717]'}`}>
@@ -152,7 +151,7 @@ export default function ProductRange({ products }: { products?: Product[] }) {
             </div>
           </div>
 
-          {/* Mobile Horizontal Snap Swipe Cards (06 — PRODUCT / MATERIAL SECTION) */}
+          {/* Mobile Horizontal Snap Swipe Cards (06 - PRODUCT / MATERIAL SECTION) */}
           <div className="mt-6 block lg:hidden">
             <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 pt-1 no-scrollbar">
               {families.map((item, index) => {
@@ -164,9 +163,8 @@ export default function ProductRange({ products }: { products?: Product[] }) {
                       setActive(index)
                       setUserInteracted(true)
                     }}
-                    className={`w-[84vw] shrink-0 snap-center rounded-2xl overflow-hidden bg-[#151515] text-white transition-all duration-300 ${
-                      isActiveCard ? 'scale-100 opacity-100 shadow-xl border border-white/20' : 'scale-[0.96] opacity-70 border border-transparent'
-                    }`}
+                    className={`w-[84vw] shrink-0 snap-center rounded-2xl overflow-hidden bg-[#151515] text-white transition-all duration-300 ${isActiveCard ? 'scale-100 opacity-100 shadow-xl border border-white/20' : 'scale-[0.96] opacity-70 border border-transparent'
+                      }`}
                   >
                     <div data-motion-parallax className="relative aspect-[4/3] w-full overflow-hidden">
                       <Image
@@ -215,9 +213,8 @@ export default function ProductRange({ products }: { products?: Product[] }) {
                     setActive(idx)
                     setUserInteracted(true)
                   }}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    active === idx ? 'w-8 bg-[#171717]' : 'w-2 bg-[#c9c1b4]'
-                  }`}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${active === idx ? 'w-8 bg-[#171717]' : 'w-2 bg-[#c9c1b4]'
+                    }`}
                 />
               ))}
             </div>

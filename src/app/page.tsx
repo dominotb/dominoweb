@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero'
+import NeedPainSection from '@/components/NeedPainSection/NeedPainSection'
 import ValueSection from '@/components/ValueSection'
 import SolutionsSection from '@/components/SolutionsSection'
 import ProductRange from '@/components/ProductRange'
@@ -20,6 +21,9 @@ export default async function Home() {
       <div data-scroll-section className="w-full">
         <Hero />
       </div>
+
+      {/* NeedPain Storytelling Section (NHU CẦU -> NỖI ĐAU -> VẬT LIỆU) */}
+      <NeedPainSection />
 
       {/* Section 2: Value Editorial Showcase */}
       <div data-scroll-section className="w-full">

@@ -1,4 +1,44 @@
+'use client'
+
+import React, { useState } from 'react'
+import { submitLead } from '@/lib/supabaseClient'
+
 export default function Consultation() {
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
+  const [brief, setBrief] = useState('')
+  const [submitting, setSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [errorMsg, setErrorMsg] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!name.trim() || !phone.trim()) {
+      setErrorMsg('Vui lòng nhập họ tên và số điện thoại.')
+      return
+    }
+
+    setSubmitting(true)
+    setErrorMsg('')
+
+    try {
+      await submitLead({
+        name: name.trim(),
+        phone: phone.trim(),
+        need: brief.trim(),
+        note: 'Đăng ký từ Form tư vấn 1:1 trang chủ',
+      })
+      setSubmitted(true)
+      setName('')
+      setPhone('')
+      setBrief('')
+    } catch {
+      setErrorMsg('Không thể gửi thông tin lúc này. Vui lòng liên hệ hotline.')
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
   return (
     <section id="consultation" className="relative flex min-h-[100svh] flex-col justify-center bg-[#f4f0e8] py-16 text-[#171717] md:py-24">
       <div className="container mx-auto px-6">
@@ -15,44 +55,86 @@ export default function Consultation() {
               Tư vấn miễn phí · 24/7
             </div>
           </div>
-          <form className="grid grid-cols-1 gap-4 sm:grid-cols-2" aria-label="Form tư vấn">
-            <label className="sr-only" htmlFor="name">
-              Họ và tên
-            </label>
-            <input
-              id="name"
-              name="name"
-              className="border-b border-[#b8ad9d] bg-transparent p-4 text-[#171717] placeholder:text-[#78716c]"
-              placeholder="Họ và tên"
-            />
-            <label className="sr-only" htmlFor="phone">
-              Số điện thoại
-            </label>
-            <input
-              id="phone"
-              name="phone"
-              className="border-b border-[#b8ad9d] bg-transparent p-4 text-[#171717] placeholder:text-[#78716c]"
-              placeholder="Số điện thoại"
-            />
-            <label className="sr-only" htmlFor="brief">
-              Nhu cầu
-            </label>
-            <textarea
-              id="brief"
-              name="brief"
-              rows={3}
-              className="sm:col-span-2 border-b border-[#b8ad9d] bg-transparent p-4 text-[#171717] placeholder:text-[#78716c]"
-              placeholder="Mô tả nhu cầu của bạn"
-            />
-            <div className="sm:col-span-2">
-              <button
-                type="button"
-                className="btn-primary touch-card-active focus-ring w-full sm:w-auto"
-              >
-                Nhận tư vấn ngay <span className="ml-2" aria-hidden="true">→</span>
-              </button>
-            </div>
-          </form>
+
+          <div>
+            {submitted ? (
+              <div className="rounded-2xl border border-emerald-600/30 bg-emerald-500/10 p-8 text-center text-emerald-900">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-600 text-white font-bold text-xl">
+                  ✓
+                </div>
+                <h3 className="mt-4 text-xl font-bold">Cảm ơn Quý khách!</h3>
+                <p className="mt-2 text-sm text-[#57534e]">
+                  Chuyên viên giải pháp tủ bếp DOMINO sẽ liên hệ lại với Quý khách trong thời gian sớm nhất.
+                </p>
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="mt-6 text-xs font-semibold text-[#171717] underline hover:opacity-80"
+                >
+                  Gửi yêu cầu khác
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4 sm:grid-cols-2" aria-label="Form tư vấn">
+                {errorMsg && (
+                  <div className="sm:col-span-2 text-xs text-rose-600 font-medium">
+                    {errorMsg}
+                  </div>
+                )}
+                <div>
+                  <label className="sr-only" htmlFor="name">
+                    Họ và tên
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full border-b border-[#b8ad9d] bg-transparent p-4 text-[#171717] placeholder:text-[#78716c] focus:outline-none focus:border-[#171717]"
+                    placeholder="Họ và tên *"
+                  />
+                </div>
+                <div>
+                  <label className="sr-only" htmlFor="phone">
+                    Số điện thoại
+                  </label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    required
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="w-full border-b border-[#b8ad9d] bg-transparent p-4 text-[#171717] placeholder:text-[#78716c] focus:outline-none focus:border-[#171717]"
+                    placeholder="Số điện thoại *"
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <label className="sr-only" htmlFor="brief">
+                    Nhu cầu
+                  </label>
+                  <textarea
+                    id="brief"
+                    name="brief"
+                    rows={3}
+                    value={brief}
+                    onChange={(e) => setBrief(e.target.value)}
+                    className="w-full border-b border-[#b8ad9d] bg-transparent p-4 text-[#171717] placeholder:text-[#78716c] focus:outline-none focus:border-[#171717]"
+                    placeholder="Mô tả nhu cầu hoặc kích thước mặt bằng dự kiến..."
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="btn-primary touch-card-active focus-ring w-full sm:w-auto"
+                  >
+                    {submitting ? 'Đang gửi...' : 'Nhận tư vấn ngay'}{' '}
+                    <span className="ml-2" aria-hidden="true">→</span>
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
         </div>
       </div>
     </section>

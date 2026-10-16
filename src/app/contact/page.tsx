@@ -75,7 +75,7 @@ export default function ContactPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-[#07090e] text-[#f8fafc] font-sans">
+    <main className="min-h-screen bg-black text-[#f8fafc] font-sans">
       {/* SECTION 1: HERO & THÔNG TIN LIÊN HỆ / FORM TƯ VẤN */}
       <section className="relative w-full overflow-hidden pt-28 pb-16 px-4 sm:px-6 lg:px-8">
         {/* Background image & gradient overlay */}
@@ -85,8 +85,8 @@ export default function ContactPage() {
             backgroundImage: `url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=90')`,
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07090e]/95 via-[#07090e]/85 to-[#07090e]/90 z-0" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#07090e]/60 via-transparent to-[#07090e] z-0" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/90 z-0" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black z-0" />
 
         <div className="container mx-auto relative z-10 pt-4">
           <div className="max-w-4xl mb-10">
@@ -107,7 +107,7 @@ export default function ContactPage() {
           <div className="space-y-8 lg:col-span-5">
             
             {/* Card 1: THÔNG TIN LIÊN HỆ */}
-            <div className="rounded-3xl border border-white/15 bg-[#0d111a]/95 p-7 sm:p-8 backdrop-blur-md shadow-2xl">
+            <div className="rounded-3xl border border-white/15 bg-[#0a0a0a]/95 p-7 sm:p-8 backdrop-blur-md shadow-2xl">
               
               <div className="border-b border-white/15 pb-5">
                 <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#d4af7a]">
@@ -192,7 +192,7 @@ export default function ContactPage() {
             </div>
 
             {/* Card 2: KẾT NỐI VỚI DOMINO */}
-            <div className="rounded-3xl border border-white/15 bg-[#0d111a]/95 p-7 sm:p-8 backdrop-blur-md shadow-2xl">
+            <div className="rounded-3xl border border-white/15 bg-[#0a0a0a]/95 p-7 sm:p-8 backdrop-blur-md shadow-2xl">
               
               <div className="border-b border-white/15 pb-4">
                 <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#d4af7a]">
@@ -212,7 +212,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   aria-label="Kênh Youtube DOMINO"
                   title="Kênh Youtube DOMINO"
-                  className="flex h-14 w-full items-center justify-center rounded-2xl border border-white/15 bg-[#141924] p-3 transition hover:border-red-500/60 hover:bg-red-500/10 hover:scale-105"
+                  className="flex h-14 w-full items-center justify-center rounded-2xl border border-white/15 bg-[#141414] p-3 transition hover:border-red-500/60 hover:bg-red-500/10 hover:scale-105"
                 >
                   <img src="/icon/youtube.png" alt="Youtube" className="h-7 w-7 object-contain" />
                 </a>
@@ -224,7 +224,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   aria-label="Fanpage Facebook DOMINO"
                   title="Fanpage Facebook DOMINO"
-                  className="flex h-14 w-full items-center justify-center rounded-2xl border border-white/15 bg-[#141924] p-3 transition hover:border-blue-500/60 hover:bg-blue-500/10 hover:scale-105"
+                  className="flex h-14 w-full items-center justify-center rounded-2xl border border-white/15 bg-[#141414] p-3 transition hover:border-blue-500/60 hover:bg-blue-500/10 hover:scale-105"
                 >
                   <img src="/icon/facebook.webp" alt="Facebook" className="h-7 w-7 object-contain rounded-full" />
                 </a>
@@ -236,7 +236,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   aria-label="Zalo OA DOMINO"
                   title="Zalo OA DOMINO"
-                  className="flex h-14 w-full items-center justify-center rounded-2xl border border-white/15 bg-[#141924] p-3 transition hover:border-sky-500/60 hover:bg-sky-500/10 hover:scale-105"
+                  className="flex h-14 w-full items-center justify-center rounded-2xl border border-white/15 bg-[#141414] p-3 transition hover:border-sky-500/60 hover:bg-sky-500/10 hover:scale-105"
                 >
                   <img src="/icon/zalo.webp" alt="Zalo" className="h-7 w-7 object-contain rounded-full" />
                 </a>
@@ -248,7 +248,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   aria-label="TikTok DOMINO"
                   title="TikTok DOMINO"
-                  className="flex h-14 w-full items-center justify-center rounded-2xl border border-white/15 bg-[#141924] p-3 transition hover:border-pink-500/60 hover:bg-pink-500/10 hover:scale-105"
+                  className="flex h-14 w-full items-center justify-center rounded-2xl border border-white/15 bg-[#141414] p-3 transition hover:border-pink-500/60 hover:bg-pink-500/10 hover:scale-105"
                 >
                   <img src="/icon/tiktok.webp" alt="TikTok" className="h-7 w-7 object-contain rounded-full" />
                 </a>
@@ -260,7 +260,7 @@ export default function ContactPage() {
 
           {/* COLUMN 2 (CỘT PHẢI / DƯỚI): GỬI YÊU CẦU FORM */}
           <div className="lg:col-span-7">
-            <div className="rounded-3xl border border-white/15 bg-[#0d111a]/95 p-7 sm:p-9 backdrop-blur-md shadow-2xl">
+            <div className="rounded-3xl border border-white/15 bg-[#0a0a0a]/95 p-7 sm:p-9 backdrop-blur-md shadow-2xl">
               
               <div className="mb-8 border-b border-white/15 pb-5">
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
@@ -302,7 +302,7 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Nhập họ và tên"
-                        className="w-full rounded-xl border border-white/20 bg-[#141924] px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 transition focus:border-[#d4af7a] focus:bg-[#1a2130] focus:outline-none"
+                        className="w-full rounded-xl border border-white/20 bg-[#141414] px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 transition focus:border-[#d4af7a] focus:bg-[#1a1a1a] focus:outline-none"
                       />
                     </div>
 
@@ -316,7 +316,7 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="Nhập số điện thoại"
-                        className="w-full rounded-xl border border-white/20 bg-[#141924] px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 transition focus:border-[#d4af7a] focus:bg-[#1a2130] focus:outline-none"
+                        className="w-full rounded-xl border border-white/20 bg-[#141414] px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 transition focus:border-[#d4af7a] focus:bg-[#1a1a1a] focus:outline-none"
                       />
                     </div>
                   </div>
@@ -332,7 +332,7 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="Nhập email (nếu có)"
-                        className="w-full rounded-xl border border-white/20 bg-[#141924] px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 transition focus:border-[#d4af7a] focus:bg-[#1a2130] focus:outline-none"
+                        className="w-full rounded-xl border border-white/20 bg-[#141414] px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 transition focus:border-[#d4af7a] focus:bg-[#1a1a1a] focus:outline-none"
                       />
                     </div>
 
@@ -345,7 +345,7 @@ export default function ContactPage() {
                           required
                           value={formData.service}
                           onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                          className="w-full appearance-none rounded-xl border border-white/20 bg-[#141924] px-4 py-3.5 text-sm sm:text-base text-white transition focus:border-[#d4af7a] focus:bg-[#1a2130] focus:outline-none pr-10"
+                          className="w-full appearance-none rounded-xl border border-white/20 bg-[#141414] px-4 py-3.5 text-sm sm:text-base text-white transition focus:border-[#d4af7a] focus:bg-[#1a1a1a] focus:outline-none pr-10"
                         >
                           <option value="" disabled>Chọn nhu cầu</option>
                           <option value="Tư vấn thiết kế tủ bếp kính">Tư vấn thiết kế tủ bếp kính</option>
@@ -370,12 +370,12 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Chia sẻ thêm về không gian, nhu cầu, ngân sách..."
-                      className="w-full rounded-xl border border-white/20 bg-[#141924] px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 transition focus:border-[#d4af7a] focus:bg-[#1a2130] focus:outline-none"
+                      className="w-full rounded-xl border border-white/20 bg-[#141414] px-4 py-3.5 text-sm sm:text-base text-white placeholder-slate-500 transition focus:border-[#d4af7a] focus:bg-[#1a1a1a] focus:outline-none"
                     />
                   </div>
 
                   {/* Row 4: File attachment box */}
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 rounded-2xl border border-white/15 bg-[#141924] p-4 sm:p-5">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 rounded-2xl border border-white/15 bg-[#141414] p-4 sm:p-5">
                     <div className="flex items-center gap-3.5">
                       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-slate-200 text-xl">
                         🔒
@@ -435,7 +435,7 @@ export default function ContactPage() {
 
       {/* SECTION 3: BẢN ĐỒ CHỈ ĐƯỜNG FULL WIDTH */}
       <section className="container mx-auto px-4 py-6 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-3xl border border-white/15 bg-[#0d111a]/95 backdrop-blur-md shadow-2xl">
+        <div className="overflow-hidden rounded-3xl border border-white/15 bg-[#0a0a0a]/95 backdrop-blur-md shadow-2xl">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3.5 sm:gap-4 border-b border-white/15 p-5 sm:p-6 sm:px-8">
             <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#d4af7a]">
@@ -491,7 +491,7 @@ export default function ContactPage() {
             return (
               <div
                 key={faq.q}
-                className="rounded-2xl border border-white/15 bg-[#0d111a]/90 transition duration-300"
+                className="rounded-2xl border border-white/15 bg-[#0a0a0a]/90 transition duration-300"
               >
                 <button
                   type="button"

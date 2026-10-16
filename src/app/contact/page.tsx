@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { submitLead } from '@/lib/supabaseClient'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -22,13 +23,32 @@ export default function ContactPage() {
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
+    try {
+      const needText = [
+        formData.service ? `Dịch vụ: ${formData.service}` : '',
+        formData.message ? `Nội dung: ${formData.message}` : '',
+        formData.email ? `Email: ${formData.email}` : '',
+        formData.fileName ? `File đính kèm: ${formData.fileName}` : '',
+      ]
+        .filter(Boolean)
+        .join(' | ')
+
+      await submitLead({
+        name: formData.name,
+        phone: formData.phone,
+        need: needText || 'Yêu cầu tư vấn & báo giá',
+        note: 'Khách gửi qua Form Liên hệ chi tiết',
+      })
       setSubmitted(true)
-    }, 800)
+    } catch (err) {
+      console.error('Submit lead error:', err)
+      setSubmitted(true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   const handleReset = () => {

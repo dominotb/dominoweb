@@ -47,47 +47,15 @@ export default function LeadsManagementPage() {
         const rawLocal = localStorage.getItem('domino_offline_leads')
         if (rawLocal) {
           const locals: Lead[] = JSON.parse(rawLocal)
+          const validLocals = locals.filter((l) => !l.id?.startsWith('demo-'))
           // prepend unique locals
           const ids = new Set(fetchedLeads.map((l) => l.id))
-          const missingLocals = locals.filter((l) => !ids.has(l.id))
+          const missingLocals = validLocals.filter((l) => !ids.has(l.id))
           fetchedLeads = [...missingLocals, ...fetchedLeads]
         }
       } catch (err) {
         console.warn('Error parsing offline leads:', err)
       }
-    }
-
-    // Sample fallback if no leads exist yet to give an immediately rich UI
-    if (fetchedLeads.length === 0) {
-      fetchedLeads = [
-        {
-          id: 'demo-1',
-          name: 'Anh Trần Tuấn Kiệt',
-          phone: '0912 345 678',
-          need: 'Tư vấn trọn gói tủ bếp inox cánh kính Luxury cho biệt thự Gamuda',
-          note: 'Khách muốn màu trà khói, hẹn khảo sát T7 tuần này',
-          status: 'survey',
-          created_at: new Date(Date.now() - 3600000 * 2).toISOString(),
-        },
-        {
-          id: 'demo-2',
-          name: 'Chị Nguyễn Mai Anh',
-          phone: '0988 765 432',
-          need: 'Dòng hợp kim nhôm Anode, mặt đá Vicostone',
-          note: 'Cần gửi báo giá sơ bộ qua Zalo trước',
-          status: 'contacted',
-          created_at: new Date(Date.now() - 3600000 * 24).toISOString(),
-        },
-        {
-          id: 'demo-3',
-          name: 'KTS Hoàng Dũng (Studio Design)',
-          phone: '0903 889 911',
-          need: 'Hợp tác thiết kế nội thất Penthouse Tây Hồ',
-          note: 'Quan tâm module thông minh và giải pháp phụ kiện Blum',
-          status: 'deal',
-          created_at: new Date(Date.now() - 3600000 * 48).toISOString(),
-        },
-      ]
     }
 
     setLeads(fetchedLeads)

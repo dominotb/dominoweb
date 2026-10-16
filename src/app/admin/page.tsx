@@ -48,7 +48,8 @@ export default function AdminDashboardPage() {
           const rawLocal = localStorage.getItem('domino_offline_leads')
           if (rawLocal) {
             const localList: Lead[] = JSON.parse(rawLocal)
-            leads = [...localList, ...leads]
+            const validList = localList.filter((l) => !l.id?.startsWith('demo-'))
+            leads = [...validList, ...leads]
           }
         } catch (err) {
           console.warn('Error reading offline leads:', err)
@@ -62,9 +63,9 @@ export default function AdminDashboardPage() {
       setStats({
         leadsCount: leads.length,
         newLeadsCount: newToday > 0 ? newToday : leads.length,
-        productsCount: products.length || 4, // fallback default
-        projectsCount: projects.length || 6,
-        postsCount: posts.length || 3,
+        productsCount: products.length,
+        projectsCount: projects.length,
+        postsCount: posts.length,
       })
 
       setRecentLeads(leads.slice(0, 5))

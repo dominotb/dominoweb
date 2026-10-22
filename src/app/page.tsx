@@ -1,7 +1,6 @@
 import Hero from '@/components/Hero'
 import NeedPainSection from '@/components/NeedPainSection/NeedPainSection'
 import ValueSection from '@/components/ValueSection'
-import SolutionsSection from '@/components/SolutionsSection'
 import ProductRange from '@/components/ProductRange'
 import Warranty from '@/components/Warranty'
 import Process from '@/components/Process'
@@ -29,9 +28,6 @@ export default async function Home() {
       <div data-scroll-section className="w-full">
         <ValueSection />
       </div>
-
-      {/* Section 3: Solutions Pinned Scroll Storytelling Section */}
-      <SolutionsSection />
 
       {/* Section 4: Product Range */}
       <div data-scroll-section className="w-full">
